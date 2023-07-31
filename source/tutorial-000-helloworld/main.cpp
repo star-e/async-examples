@@ -11,7 +11,7 @@ void test_combined() {
 
 void test_separated() {
     auto task = unifex::just(std::make_unique<int>(43));
-    auto res = unifex::sync_wait(std::move(task)); // Q: Can std::move be omitted?
+    auto res = unifex::sync_wait(std::move(task)); // Q: Can std::move be omitted? Why?
     // Q: What type is res?
     std::cout << "Result: " << **res << std::endl;
 }
