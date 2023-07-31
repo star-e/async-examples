@@ -1,0 +1,21 @@
+{
+    "files.exclude": {
+        ".cache/": true,
+        ".vs/": true,
+        "node_modules/": true,
+        "packages/": true,
+        "out/build": true,
+        "External/node/": true,
+        "**/*.js.map": {
+            "when": "$(basename)"
+        }
+    },
+    "search.exclude": {
+        "out/": true,
+        "external/": true
+    },
+    "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json",
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "C_Cpp.errorSquiggles": "disabled",
+    "editor.formatOnSave": true
+}

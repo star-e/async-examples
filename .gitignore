@@ -30,3 +30,15 @@
 *.exe
 *.out
 *.app
+
+# Visual Studio
+*.user
+*.aps
+.cache/
+.vs/
+out/
+build/
+compile_commands.json
+x64/
+x86/
+Win32/
