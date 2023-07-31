@@ -20,4 +20,5 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 
 # Include sub-projects.
-add_subdirectory("External/libunifex")
+add_subdirectory("external/libunifex")
+add_subdirectory("source/tutorial-000-helloworld")
