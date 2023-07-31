@@ -4,13 +4,13 @@
 #include <iostream>
 
 void test_combined() {
-    auto res = unifex::sync_wait(unifex::just(0));
+    auto res = unifex::sync_wait(unifex::just(42));
     static_assert(std::is_same_v<decltype(res), std::optional<int>>);
     std::cout << "Result: " << *res << std::endl;
 }
 
 void test_separated() {
-    auto task = unifex::just(std::make_unique<int>(1));
+    auto task = unifex::just(std::make_unique<int>(43));
     auto res = unifex::sync_wait(std::move(task)); // Q: Can std::move be omitted?
     // Q: What type is res?
     std::cout << "Result: " << **res << std::endl;
