@@ -4,7 +4,6 @@
 #include <unifex/just.hpp>
 #include <unifex/task.hpp>
 #include <unifex/then.hpp>
-#include <unifex/typed_via.hpp>
 #include <unifex/single_thread_context.hpp>
 #include <unifex/any_sender_of.hpp>
 #include <type_traits>
