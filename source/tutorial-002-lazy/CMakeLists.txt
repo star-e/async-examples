@@ -23,6 +23,6 @@ target_include_directories(tutorial-002-lazy PUBLIC
 target_link_libraries(tutorial-002-lazy PUBLIC unifex)
 
 add_custom_command(TARGET tutorial-002-lazy POST_BUILD
-  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_BINARY_DIR}/external/libunifex/source/unifex.dll ${CMAKE_BINARY_DIR}/bin/unifex.dll
+  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_BINARY_DIR}/external/libunifex/source/${CMAKE_BUILD_TYPE}/unifex.dll ${CMAKE_BINARY_DIR}/bin/${CMAKE_BUILD_TYPE}/unifex.dll
   COMMENT "libuniex dll and pdb"
 )
