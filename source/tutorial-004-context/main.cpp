@@ -53,7 +53,7 @@ public:
         uint32_t first = data.size() / 2;
         uint32_t second = data.size() - first;
 
-        // sequence
+        // sequence, will take 2 seconds to complete
         auto res1 = co_await _taskPool.process(data, 0, first);
         auto res2 = co_await _taskPool.process(data, first, second);
 
@@ -77,6 +77,7 @@ public:
         // switch context to worker
         uint32_t first = data.size() / 2;
         uint32_t second = data.size() - first;
+        // parallel, will take 1 second to complete
         auto [res1, res2] = co_await unifex::when_all(
             _taskPool.process(data, 0, first),
             _taskPool.process(data, first, second));
@@ -100,6 +101,7 @@ public:
                     uint32_t first = data.size() / 2;
                     uint32_t second = data.size() - first;
                     std::cout << "[graphics " << std::this_thread::get_id() << "] begin: " << time() << std::endl;
+                    // parallel, will take 1 second to complete
                     return unifex::when_all(
                         service->_taskPool.process(data, 0, first),
                         service->_taskPool.process(data, first, second));
