@@ -27,7 +27,7 @@ int main() {
     {
         auto task = []() -> unifex::task<int> {
             // This lambda function is a coroutine.
-            // When the lambda is called, the coroutine will return immediately.
+            // When the lambda is called, the coroutine will suspend immediately.
             // This is the design choice of unifex::task. (lazy evaluation)
             // The coroutine will be resumed when the task is actually executed.
             std::cout << "execute makeTask" << std::endl;
