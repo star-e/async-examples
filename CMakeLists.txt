@@ -11,13 +11,14 @@ project("async")
 set(CMAKE_MAP_IMPORTED_CONFIG_MINSIZEREL Release)
 set(CMAKE_MAP_IMPORTED_CONFIG_RELWITHDEBINFO Release)
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
 if(WIN32)
   add_definitions(-D_MBCS)
 endif()
 
 # config c++ compiler
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
 
 # Include sub-projects.
 add_subdirectory("external/libunifex")
