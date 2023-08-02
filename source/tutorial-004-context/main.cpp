@@ -93,12 +93,12 @@ public:
     }
 
     unifex::any_sender_of<uint32_t> parallel2(std::vector<uint32_t> data) {
-        uint32_t first = data.size() / 2;
-        uint32_t second = data.size() - first;
-        return unifex::just(this, std::vector<uint32_t>{ std::move(data) }, first, second)
+        return unifex::just(this, std::vector<uint32_t>{ std::move(data) })
             | unifex::typed_via(_context.get_scheduler())
             | unifex::let_value(
-                [](GraphicsService* service, const std::vector<uint32_t>& data, uint32_t first, uint32_t second) {
+                [](GraphicsService* service, const std::vector<uint32_t>& data) {
+                    uint32_t first = data.size() / 2;
+                    uint32_t second = data.size() - first;
                     std::cout << "[graphics " << std::this_thread::get_id() << "] begin: " << time() << std::endl;
                     return unifex::when_all(
                         service->_taskPool.process(data, 0, first),
